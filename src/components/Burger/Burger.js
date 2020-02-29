@@ -5,13 +5,13 @@ import styles from './Burger.module.css';
 
 const burger = ( props ) => {
 
-  let trans
+  const randomInt = () => Math.floor( Math.random() * 1000 );
 
   let transformedIngredients = null;
   transformedIngredients = Object.keys( props.ingredients )
     .map( igKey => {
       return [...Array(props.ingredients[igKey])].map( (_,i) => {
-        return <BurgerIngredient key={ igKey + 1 } type={igKey} />
+        return <BurgerIngredient key={ igKey + 1 + randomInt() } type={igKey} />
       })
     })
     .reduce( ( arr, el ) => {

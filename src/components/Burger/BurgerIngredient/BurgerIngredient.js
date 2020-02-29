@@ -5,29 +5,31 @@ import classes from './BurgerIngredient.module.css'
 
 class BurgerIngredient extends Component {
 
+
   render() {
+    const randomInt = () => Math.floor( Math.random() * 1000);
     let ingredient = null;
     switch (this.props.type) {
       case('bread-bottom'):
-        ingredient = <div className={classes.BreadBottom}>Bun</div>
+        ingredient = <div key={ randomInt() } className={classes.BreadBottom}>Bun</div>
         break;
       case('bread-top'):
-        ingredient = (<div className={classes.BreadTop}>
-          <div className={classes.Seeds1}>Bun</div>
-          <div className={classes.Seeds2}>Bun</div>
+        ingredient = (<div key={randomInt()} className={classes.BreadTop}>
+          <div key={randomInt()} className={classes.Seeds1}>Bun</div>
+          <div key={ randomInt() } className={classes.Seeds2}>Bun</div>
         </div>);
         break;
       case('meat'):
-        ingredient = <div className={classes.Meat}>Meat</div>
+        ingredient = <div key={randomInt()} className={classes.Meat}>Meat</div>
         break;
       case('cheese'):
-        ingredient = <div className={classes.Cheese}>Cheese</div>
+        ingredient = <div key={randomInt()} className={classes.Cheese}>Cheese</div>
         break;
       case('bacon'):
-        ingredient = <div className={classes.Bacon}>Bacon</div>
+        ingredient = <div key={randomInt()} className={classes.Bacon}>Bacon</div>
         break;
       case('salad'):
-        ingredient = <div className={classes.Salad}>Salad</div>
+        ingredient = <div key={randomInt()} className={classes.Salad}>Salad</div>
         break;
       default:
         ingredient = null;
