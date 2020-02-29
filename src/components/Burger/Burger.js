@@ -3,9 +3,10 @@ import React from "react";
 import BurgerIngredient from "./BurgerIngredient/BurgerIngredient";
 import styles from './Burger.module.css';
 
-const burger = ( props ) => {
+import { randomInt } from "../../util/Util";
 
-  const randomInt = () => Math.floor( Math.random() * 1000 );
+
+const burger = ( props ) => {
 
   let transformedIngredients = null;
   transformedIngredients = Object.keys( props.ingredients )

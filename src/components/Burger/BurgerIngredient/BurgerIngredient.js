@@ -1,13 +1,13 @@
 import React, {Component} from "react";
 import PropTypes from 'prop-types'
 
+import { randomInt } from "../../../util/Util";
+
 import classes from './BurgerIngredient.module.css'
 
 class BurgerIngredient extends Component {
 
-
   render() {
-    const randomInt = () => Math.floor( Math.random() * 1000);
     let ingredient = null;
     switch (this.props.type) {
       case('bread-bottom'):
