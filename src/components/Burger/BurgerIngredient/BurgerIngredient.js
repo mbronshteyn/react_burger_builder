@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import PropTypes from 'prop-types'
 
-import { randomInt } from "../../../util/Util";
+import {randomInt} from "../../../util/Util";
 
 import classes from './BurgerIngredient.module.css'
 
@@ -11,7 +11,7 @@ class BurgerIngredient extends Component {
     let ingredient = null;
     switch (this.props.type) {
       case('bread-bottom'):
-        ingredient = <div key={ randomInt() } className={classes.BreadBottom}>Bun</div>
+        ingredient = <div key={randomInt()} className={classes.BreadBottom}>Bun</div>;
         break;
       case('bread-top'):
         ingredient = (<div key={randomInt()} className={classes.BreadTop}>
@@ -20,16 +20,19 @@ class BurgerIngredient extends Component {
         </div>);
         break;
       case('meat'):
-        ingredient = <div key={randomInt()} className={classes.Meat}>Meat</div>
+        ingredient = <div key={randomInt()} className={classes.Meat}>Meat</div>;
         break;
       case('cheese'):
-        ingredient = <div key={randomInt()} className={classes.Cheese}>Cheese</div>
+        ingredient = <div key={randomInt()} className={classes.Cheese}>Cheese</div>;
         break;
       case('bacon'):
-        ingredient = <div key={randomInt()} className={classes.Bacon}>Bacon</div>
+        ingredient = <div key={randomInt()} className={classes.Bacon}>Bacon</div>;
+        break;
+      case('tomato'):
+        ingredient = <div key={randomInt()} className={classes.Tomato}>Tomato</div>;
         break;
       case('salad'):
-        ingredient = <div key={randomInt()} className={classes.Salad}>Salad</div>
+        ingredient = <div key={randomInt()} className={classes.Salad}>Salad</div>;
         break;
       default:
         ingredient = null;
@@ -40,7 +43,7 @@ class BurgerIngredient extends Component {
 
     return ingredient;
   }
-};
+}
 
 BurgerIngredient.propTypes = {
   'bread-bottom': PropTypes.string,

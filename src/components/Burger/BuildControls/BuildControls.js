@@ -8,6 +8,7 @@ const controls = [
   {label: 'Cheese', type: 'cheese'},
   {label: 'Meat', type: 'meat'},
   {label: 'Bacon', type: 'bacon'},
+  {label: 'Tomato', type: 'tomato'},
 ];
 
 const buildControls = (props) => (
@@ -22,6 +23,7 @@ const buildControls = (props) => (
         disabled= { props.disabled[ctrl.type] }
       />
     ))}
+    <button className={styles.OrderButton} disabled={!props.purchasable}>ORDER NOW</button>
   </div>
 );
 
