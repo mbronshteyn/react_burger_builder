@@ -8,7 +8,7 @@ import classes from './BurgerIngredient.module.css'
 class BurgerIngredient extends Component {
 
   render() {
-    let ingredient = null;
+    let ingredient;
     switch (this.props.type) {
       case('bread-bottom'):
         ingredient = <div key={randomInt()} className={classes.BreadBottom}>Bun</div>;
@@ -38,8 +38,6 @@ class BurgerIngredient extends Component {
         ingredient = null;
 
     }
-
-    console.log('Ingredient: ', ingredient);
 
     return ingredient;
   }
